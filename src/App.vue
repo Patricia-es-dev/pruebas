@@ -1,32 +1,69 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <header class="patricia">
+      <nav class="navbar navbar-expand-sm" aria-labelledby="myProperty">
+        <div class="container">
+          <a class="patricia__avatar" href="https://www.linkedin.com/in/patriciaantonmartin/" target="_blank" id="myProperty">
+            <img
+              class="patricia__avatar--thumbnail" 
+              src="https://media.licdn.com/dms/image/C4D03AQFB5WpZnMrjxA/profile-displayphoto-shrink_200_200/0/1641673531282?e=1681344000&v=beta&t=FvS_5WMo95bo3L30-wKowx8Q914Zu4L3xRjeJjJIlr0" alt="Patricia Antón M." />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Navegación móvil">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="nav">
+            <ul class="patricia__nav me-auto ">
+              <li class="patricia__nav--item">
+                <router-link to="/" class="nav-link" aria-current="page">Home</router-link>
+              </li>
+              <li class="patricia__nav--item">
+                <router-link to="/patricia-anton" class="nav-link" href="#">Patricia</router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
     <router-view/>
   </div>
 </template>
+<style lang="sass">
+.patricia 
+  &__avatar
+    width: 4rem
+    height: 4rem
+    &--thumbnail
+      border-radius: 25rem
+      padding: 0.25rem
+      background-color: #fff
+      border: 1px solid var(--bs-border-color)
+      max-width: 100%
+  &__nav
+    display: flex
+    flex-direction: row
+    padding-left: 1.25rem
+    margin: 0
+    list-style: none
+    &--item
+      position: relative
+    .nav-link
+      color: var(--bs-primary)
+      padding: .5rem
+      &.router-link-exact-active
+        font-weight: bold
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+      &::after 
+        content: ''
+        width: 100%
+        position: absolute
+        top: 100%
+        left: 0
+        height: 2px
+        background-color: var(--bs-primary)
+        transform: scaleX(0)
+        transition: transform .35s ease
+      &:hover::after 
+        transform: scaleX(1)
+ 
 </style>

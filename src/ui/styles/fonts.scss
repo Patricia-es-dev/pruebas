@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Open+Sans:wght@300400&display=swap');
+:root {
+  --bs-gray-dark: #{$neutral-dark};
+  --bs-gray: #{$neutral-base};
+  --bs-primary: #{$color-primary};
+}
+.font-sight {
+  font-family: $kalam;
+  color: $color-primary;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.font-base {
+  font-family: $open;
+}
+
+h1, h2, h3, h4, p {
+  font-family: $open;
+  color: $color-primary;
+  color: var(--bs-primary);
+}
+
+#app {
+  font-family: $open;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+    
+        
+        
+      
+  
