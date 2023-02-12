@@ -3,7 +3,9 @@
     <article class="bg-effects">
       <h3>Patricia: Front end developer con un toque UX</h3>
       <div class="info">
-        <p>Lorem blña</p>
+        <p>Desarrollador de front-end (antes maquetador web)</p>
+        <p>Desarrollador con Vue desde 2019</p>
+        <p>Maquetador web desde 2006</p>
         <p class="font-sight">Patricia A.</p>
       </div>
     </article>
@@ -21,9 +23,12 @@ export default {
     background-color: var(--bs-white)
     padding: .5rem
     border-radius: .25rem
-    .font-sight
-      text-align: right
-      margin-top: 1rem 
+    p 
+      padding: 0
+      margin: 0
+      &.font-sight
+        text-align: right
+        margin-top: 1rem 
   .bg-effects
     border-radius: .5rem
     padding: .5rem
