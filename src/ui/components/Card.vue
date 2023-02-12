@@ -4,8 +4,8 @@
       <img class="p-card__image card-img-top" :src="`https://picsum.photos/600/300/?image=${info.id}`" />
       <small class="chip">{{ info.userId }}</small>
       <div class="card__info">        
-        <h3>{{ info.title }}</h3>
-        <p>{{info.description}}</p>
+        <h3>{{ info.title | capitalize }}</h3>
+        <p>{{info.description | capitalize }}</p>
       </div>
     </article>
   </div>

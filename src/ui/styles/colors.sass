@@ -3,10 +3,8 @@
     background: -webkit-linear-gradient(to right,$color-oposite, $color-primary)
     background: linear-gradient(to right, $color-oposite, $color-primary)
     min-height: 100vh
-$colors: $color-oposite, $color-primary
-$repeat: 10  // How often you want the pattern to repeat.
-// Warning: a higher number outputs more CSS.
-
+$repeat: 10
 @for $i from 1 through $repeat 
     .bg-userGroup-#{$i}
-        background: lighten(nth($colors, random(length($colors))), 2%*$repeat)
+        background: rgba(random(255),random(255),random(255), 0.2)
+          

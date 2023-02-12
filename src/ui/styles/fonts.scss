@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Open+Sans:wght@300400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Open+Sans:wght@300;400&display=swap');
 :root {
   --bs-gray-dark: #{$neutral-dark};
   --bs-gray: #{$neutral-base};
   --bs-primary: #{$color-primary};
+  --bs-oposite: #{$color-oposite};
+  --bs-soft-primary: #{lighten( $color-primary, 20%)};
 }
 .font-sight {
-  font-family: $kalam;
+  font-family: $babylonica;
   color: $color-primary;
   font-weight: 300;
   font-size: 2rem;
+  text-decoration: wavy;
+  font-size: italic;
 }
 
 .font-base {

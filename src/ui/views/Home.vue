@@ -1,9 +1,11 @@
 <template>
   <div class="home container">
     <article class="bg-effects">
-      <h3>Patricia: Front end developer con sabor UX</h3>
-      <p>Lorem blña</p>
-      <p class="font-sight">Patricia A.</p>
+      <h3>Patricia: Front end developer con un toque UX</h3>
+      <div class="info">
+        <p>Lorem blña</p>
+        <p class="font-sight">Patricia A.</p>
+      </div>
     </article>
   </div>
 </template>
@@ -14,11 +16,19 @@ export default {
 }
 </script>
 <style lang="sass">
-.home 
+.home
+  .info
+    background-color: var(--bs-white)
+    padding: .5rem
+    border-radius: .25rem
+    .font-sight
+      text-align: right
+      margin-top: 1rem 
   .bg-effects
     border-radius: .5rem
     padding: .5rem
-    p, h3
+    h3
       color: var(--bs-white)
+      text-shadow: 1px 1px 1px  var(--bs-gray-dark)
 
 </style>

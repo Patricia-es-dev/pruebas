@@ -8,8 +8,8 @@
               class="patricia__avatar--thumbnail" 
               src="https://media.licdn.com/dms/image/C4D03AQFB5WpZnMrjxA/profile-displayphoto-shrink_200_200/0/1641673531282?e=1681344000&v=beta&t=FvS_5WMo95bo3L30-wKowx8Q914Zu4L3xRjeJjJIlr0" alt="Patricia Antón M." />
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Navegación móvil">
-            <span class="navbar-toggler-icon"></span>
+          <button class="patricia__collapse-button" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Navegación móvil">
+             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="nav">
@@ -41,10 +41,14 @@
       max-width: 100%
   &__nav
     display: flex
-    flex-direction: row
     padding-left: 1.25rem
     margin: 0
     list-style: none
+    @media (max-width: 600px)
+        margin: 1rem 0
+        padding: 0
+        flex-direction: column
+        box-shadow: 0 .25rem .25rem -.125rem var(--bs-gray) 
     &--item
       position: relative
     .nav-link
@@ -65,5 +69,9 @@
         transition: transform .35s ease
       &:hover::after 
         transform: scaleX(1)
- 
+  &__collapse-button
+    padding: .5rem
+    border: 2px solid var(--bs-soft-primary)
+    background-color: var(--white)
+    border-radius: .25rem
 </style>
