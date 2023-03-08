@@ -6,17 +6,39 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    candidates: []
+    building: {},
   },
   mutations: {
-    setUserList (state, candidates) {
-      state.candidates = candidates
-    },
+    // TODO: borrar
+    // setRandomJoke (state, joke) {
+    //   state.randomJoke = joke
+    // },
+    // setCodeWarProfile (state, codeWarProfile) {
+    //   state.codeWarProfile = codeWarProfile
+    // },
+    setBuilding (state, building) {
+      state.building = building
+    }
+  },
+  getters: {
+    // ...
+    roomsCapacity (state ) {
+      return state.building.filter(b => b.floor)
+    }
   },
   actions: {
-    async getUserList({ commit }) {
-      const candidates = await Api.getZatacaCandidate()
-      commit('setUserList', candidates)
-    }
+    // TODO: borrar
+    // async getUserList({ commit }) {
+    //   const joke = await Api.getChuckRandomJoke()
+    //   commit('setRandomJoke', joke)
+    // },
+    // async getCodeWarProfile({ commit}) {
+    //   const codeWarProfile = await Api.getCodeWarProfile()
+    //   commit('setCodeWarProfile', codeWarProfile)
+    // },
+    async getBuilding({ commit}) {
+      const building = await Api.getBuilding()
+      commit('setBuilding', building)
+    },
   }
 })

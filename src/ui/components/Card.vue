@@ -1,11 +1,11 @@
 <template>
   <div>
     <article class="card" :class="`bg-userGroup-${info.userId}`">
-      <img class="p-card__image card-img-top" :src="`https://picsum.photos/600/300/?image=${info.id}`" />
-      <small class="chip">{{ info.userId }}</small>
+      <!-- <img class="p-card__image card-img-top" :src="info.icon" /> -->
+      <small class="chip">{{ info.id }}</small>
       <div class="card__info">        
-        <h3>{{ info.title | capitalize }}</h3>
-        <p>{{info.description | capitalize }}</p>
+        <h3>{{ info.value | capitalize }}</h3>
+        <p>{{info.url | capitalize }}</p>
       </div>
     </article>
   </div>

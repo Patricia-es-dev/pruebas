@@ -1,6 +1,6 @@
 <template>
   <article class="container">
-    <section class="search">
+    <!-- <section class="search">
       <span class="search__icon" id="search-addon" role="presentation">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
           <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -8,9 +8,26 @@
       </span>
       <input type="search" v-model="search" placeholder="Filtrar datos" class="search__input"/>
 
+    </section> -->
+    <section class="chuckJoke row col-md-6 offset-md-3">
+      <Card :info="randomJoke"/>
+
     </section>
-    <section class="candidate row row-cols-1 row-cols-md-3 g-2" role="list">
-      <Card :info="post" v-for="(post, i) in filteredList" :key="i" class="col" role="listitem"/>
+    <section class="chuckJoke row row-cols-1 row-cols-md-3 g-2" role="list">
+      <!-- <Card :info="post" v-for="(post, i) in filteredList" :key="i" class="col" role="listitem"/> -->
+    </section>
+    <section>
+      {{codeWarProfile}}
+      <!-- {{ codeWarProfile.username }}
+      {{ codeWarProfile.name }}
+      {{ codeWarProfile.honor }}
+      {{ codeWarProfile.clan }}
+      {{ codeWarProfile.leaderboardPosition }}
+      {{ codeWarProfile.languages }}
+      {{ codeWarProfile.codeChallenges }}
+      {{ codeWarProfile.codeChallenges }}
+      {{ codeWarProfile.skills }}
+      {{ codeWarProfile.rank }} -->
     </section>
   </article>
 </template>
@@ -29,15 +46,15 @@ export default {
     }
   },
   computed:{
-   ...mapState(['candidates']),
-    filteredList() {
-      return this.candidates.filter(candidates => {
-        return candidates.title.toLowerCase().includes(this.search.toLowerCase())
-      })
-    }
+   ...mapState(['randomJoke', 'codeWarProfile']),
+    // filteredList() {
+    //   return this.chuckJokes.filter(chuckJokes => {
+    //     return chuckJokes.title.toLowerCase().includes(this.search.toLowerCase())
+    //   })
+    // }
   },
   methods: {
-    ...mapActions(['getUserList']),
+    ...mapActions(['getUserList', 'getCodewarProfile']),
   },
   async created () {
     await this.getUserList()
